@@ -1,40 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <title>Video Stream</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Stream</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #f4f4f4;
+      overflow: hidden;
     }
+
+    #videoContainer {
+      width: 80%;
+      height: auto;
+      max-height: 90%;
+    }
+
     video {
-      max-width: 100%;
-      max-height: 80vh;
-      border: 2px solid #333;
+      width: 100%;
+      height: auto;
+      max-height: 100%;
     }
   </style>
 </head>
+
 <body>
-  <video controls>
-    <!-- Replace this with your backend proxy URL -->
-    <source src="https://proxy-73us.onrender.com/proxy" type="application/x-mpegURL">
-    Your browser does not support the video tag.
-  </video>
+
+  <div id="videoContainer">
+    <video id="videoPlayer" controls autoplay></video>
+  </div>
 
   <script>
-    // Telegram Channel Popup
-    window.onload = function () {
-      if (confirm("Join @Tushar_Stream for more links")) {
-        window.location.href = "https://t.me/Tushar_Stream"; // Telegram channel link
-      }
+    // URL of the backend proxy
+    const backendProxyUrl = 'https://proxy-73us.onrender.com/proxy';  // Replace with your actual backend URL
+
+    // Set the video source to the backend proxy
+    const videoElement = document.getElementById('videoPlayer');
+    videoElement.src = backendProxyUrl;
+
+    // Telegram pop-up functionality
+    window.onload = function() {
+      setTimeout(() => {
+        const userResponse = confirm("Join @Tushar_Stream for more links?");
+        if (userResponse) {
+          window.location.href = 'https://t.me/Tushar_Stream';  // Redirect to Telegram channel if user clicks "OK"
+        }
+      }, 1000);  // Delay of 1 second before the pop-up appears
     };
   </script>
+
 </body>
+
 </html>
