@@ -16,6 +16,6 @@ app.get('/proxy', (req, res) => {
   request(streamUrl).pipe(res);
 });
 
-app.listen(PORT, () => {
-  console.log(`Proxy server is running on port ${PORT}`);
+app.listen(3000, () => {
+  console.log(`Proxy server is running on port ${3000}`);
 });
