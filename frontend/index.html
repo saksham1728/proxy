@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Stream</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+    video {
+      max-width: 100%;
+      max-height: 80vh;
+      border: 2px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <video controls>
+    <!-- Replace this with your backend proxy URL -->
+    <source src="https://your-backend-app.onrender.com/proxy" type="application/x-mpegURL">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    // Telegram Channel Popup
+    window.onload = function () {
+      if (confirm("Join @Tushar_Stream for more links")) {
+        window.location.href = "https://t.me/Tushar_Stream"; // Telegram channel link
+      }
+    };
+  </script>
+</body>
+</html>
